@@ -109,9 +109,9 @@ public class SignUpActivity extends ActionBarActivity {
                 ParseUser user = new ParseUser();
                 user.setUsername(username.getText().toString());
                 user.setPassword(password.getText().toString());
-                user.put("firstName", firstName);
-                user.put("lastName", lastName);
-                user.put("address", address);
+                user.put("firstName", firstName.getText().toString());
+                user.put("lastName", lastName.getText().toString());
+                user.put("address", address.getText().toString());
 
                 //Call Parse sign up method
                 user.signUpInBackground(new SignUpCallback() {
