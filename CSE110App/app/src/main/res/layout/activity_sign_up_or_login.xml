@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="30dp"
+    android:orientation="vertical"
+    tools:context="com.swaglords.cse110app.Login.SignUpOrLoginActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Sign In"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="gravity"
+            android:textSize="80dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1">
+
+        <EditText
+            android:hint="Username"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/signInUserName"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textAlignment="gravity"
+            android:layout_margin="5dp"
+            android:textSize="30dp" />
+
+        <EditText
+            android:hint="Password"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/signInPassword"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Login"
+            android:id="@+id/loginButton"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="30dp"
+            android:layout_margin="0dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Register"
+            android:id="@+id/signInRegisterButton"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="30dp"
+            android:layout_margin="0dp" />
+    </LinearLayout>
+</LinearLayout>
