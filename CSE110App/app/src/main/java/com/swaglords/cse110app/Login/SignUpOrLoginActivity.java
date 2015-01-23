@@ -81,10 +81,13 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 					{
 						progressDialog.dismiss();
 						if (e != null) {
-							Toast.makeText(appContext, e.getMessage(), Toast.LENGTH_LONG).show();
+							Toast.makeText(appContext, R.string.login_failed_message, Toast.LENGTH_LONG).show();
 						}
 						else {
-							Toast.makeText(appContext, "Login succeeded!", Toast.LENGTH_LONG).show();
+							// Start HomeActivity
+							Intent intent = new Intent(appContext, HomeActivity.class);
+							intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+							startActivity(intent);
 						}
 					}
 				});
