@@ -1,18 +1,18 @@
 package com.swaglords.cse110app.Login;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
@@ -22,6 +22,7 @@ import com.swaglords.cse110app.R;
 
 public class SignUpOrLoginActivity extends ActionBarActivity {
 	private Context appContext;
+	private DisplayMetrics displayInfo;
 	private EditText username, password;
 	private Button login, register;
 
@@ -31,6 +32,7 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_sign_up_or_login);
 
 		appContext = SignUpOrLoginActivity.this;
+		displayInfo = getResources().getDisplayMetrics();
 		Parse.initialize(this, "ktmIrppN0aJb1J2kI8o2jRiAJJPSEAnYSxQZp9iF", "wSJeYJfZWko5zq5Cl2ofYGrWFIKmJSjuhVYAyo1n");
 
 		//Initialize elements
@@ -42,35 +44,16 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 		login.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void  onClick (View view) {
-				// Check to see if the login information is filled in
-				boolean validationError = false;
-
-				if (isEmpty(username)) {
-					validationError = true;
-				}
-				if (isEmpty(password)) {
-					if (validationError) {
-					}
-					validationError = true;
-				}
-
-				// If there's an error, display it with a pop-up
-				if (validationError) {
-					final AlertDialog.Builder loginFailedDialog = new AlertDialog.Builder(appContext);
-					loginFailedDialog.setMessage(R.string.login_failed_message_no_input);
-					loginFailedDialog.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener()
-					{
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
-					});
-					loginFailedDialog.show();
-					return;
-				}
 
 				// Show a progress dialog
-				final ProgressDialog progressDialog = new ProgressDialog(appContext);
-				progressDialog.setTitle("Logging in...");
+				final AlertDialog.Builder progressBuilder = new AlertDialog.Builder(appContext);
+				progressBuilder.setTitle("Logging in...");
+				int padding = (int) (20 * displayInfo.density);
+				ProgressBar bar = new ProgressBar(appContext);
+				bar.setPadding(0, padding, 0, padding);
+				progressBuilder.setView(bar);
+
+				final AlertDialog progressDialog = progressBuilder.create();
 				progressDialog.show();
 
 				//Start logging into the Parse database
@@ -79,9 +62,35 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 					@Override
 					public void done(ParseUser parseUser, ParseException e)
 					{
+						// Get rid of the login dialog
 						progressDialog.dismiss();
+
 						if (e != null) {
-							Toast.makeText(appContext, R.string.login_failed_message, Toast.LENGTH_LONG).show();
+							// Prepare an alert dialog to notify the user of an error
+							final AlertDialog.Builder loginFailedDialog = new AlertDialog.Builder(appContext);
+							loginFailedDialog.setTitle(R.string.login_failed);
+							loginFailedDialog.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener()
+							{
+								public void onClick(DialogInterface dialog, int which)
+								{
+								}
+							});
+
+							// Show the dialog with the appropriate message
+							if (isEmpty(username) || isEmpty(password)) {
+								if (!isEmpty(password)) // If the password is filled, the username isn't
+									loginFailedDialog.setMessage(R.string.login_failed_message_no_username);
+								else if (!isEmpty(username)) // If the username is filled, the password isn't
+									loginFailedDialog.setMessage(R.string.login_failed_message_no_password);
+								else // Otherwise neither are filled
+									loginFailedDialog.setMessage(R.string.login_failed_message_no_input);
+
+								loginFailedDialog.show();
+							}
+							else {
+								loginFailedDialog.setMessage(R.string.login_failed_message);
+								loginFailedDialog.show();
+							}
 						}
 						else {
 							// Start HomeActivity

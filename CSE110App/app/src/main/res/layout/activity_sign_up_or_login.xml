@@ -46,7 +46,9 @@
             android:layout_gravity="center"
             android:textAlignment="gravity"
             android:layout_margin="5dp"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+			android:singleLine="true"
+			android:focusable="true"/>
 
         <EditText
             android:hint="Password"
@@ -59,12 +61,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+			android:focusable="true"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
