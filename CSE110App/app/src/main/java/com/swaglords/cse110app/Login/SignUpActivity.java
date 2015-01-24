@@ -126,6 +126,7 @@ public class SignUpActivity extends ActionBarActivity {
                         else{
                             Intent intent =
                                     new Intent(SignUpActivity.this, HomeActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         }
                     }

@@ -46,7 +46,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:hint="Username"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:focusable="true"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -58,7 +60,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:hint="Password"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:focusable="true"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -70,7 +74,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:hint="Repeat Password"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:focusable="true"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -82,7 +88,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:hint="First Name"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:focusable="true"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -94,7 +102,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:hint="Last Name"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:focusable="true"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -106,7 +116,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:hint="Address"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:focusable="true"
+            android:singleLine="true" />
     </LinearLayout>
 
     <LinearLayout

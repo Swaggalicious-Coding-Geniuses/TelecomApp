@@ -4,7 +4,8 @@
     android:layout_height="fill_parent"
     android:padding="30dp"
     android:orientation="vertical"
-    tools:context="com.swaglords.cse110app.Login.SignUpOrLoginActivity">
+    tools:context="com.swaglords.cse110app.Login.SignUpOrLoginActivity"
+    android:id="@+id/parentLayout">
 
 
     <LinearLayout
@@ -13,19 +14,36 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1">
+        android:layout_weight="1.05">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Telegroup Communications"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp" />
+
+        <View
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Sign In"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal"
             android:textAlignment="gravity"
-            android:textSize="80dp"
+            android:textSize="30dp"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+            android:paddingTop="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -40,13 +58,13 @@
             android:hint="Username"
             android:gravity="center"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/signInUserName"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:textAlignment="gravity"
             android:layout_margin="5dp"
-            android:textSize="30dp"
+            android:textSize="25dp"
 			android:singleLine="true"
 			android:focusable="true"/>
 
@@ -54,44 +72,54 @@
             android:hint="Password"
             android:gravity="center"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/signInPassword"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:textSize="30dp"
-			android:focusable="true"/>
+            android:textSize="25dp"
+			android:focusable="true"
+            android:paddingTop="20dp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1">
+        android:layout_weight="1.3"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp">
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:text="Login"
             android:id="@+id/loginButton"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:textSize="30dp"
-            android:layout_margin="0dp" />
+            android:layout_margin="0dp"
+            android:layout_marginRight="20dp" />
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:text="Register"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
             android:id="@+id/signInRegisterButton"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:textSize="30dp"
             android:layout_margin="0dp" />
     </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="30dp" />
 </LinearLayout>
