@@ -24,7 +24,7 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 	private Context appContext;
 	private DisplayMetrics displayInfo;
 	private EditText username, password;
-	private Button login, register;
+	private Button login;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 		username = (EditText) findViewById(R.id.signInUserName);
 		password = (EditText) findViewById(R.id.signInPassword);
 		login = (Button) findViewById(R.id.loginButton);
-		register = (Button) findViewById(R.id.signInRegisterButton);
 
 		login.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -57,7 +56,8 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 				progressDialog.show();
 
 				//Start logging into the Parse database
-				ParseUser.logInInBackground(username.getText().toString(), password.getText().toString(), new LogInCallback()
+				ParseUser.logInInBackground(username.getText().toString().toLowerCase(), password.getText().toString()
+                        , new LogInCallback()
 				{
 					@Override
 					public void done(ParseUser parseUser, ParseException e)
@@ -102,17 +102,7 @@ public class SignUpOrLoginActivity extends ActionBarActivity {
 				});
 			}
 		});
-
-		//Set onClickListener to link to SignUpActivity
-		register.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent =
-						new Intent(SignUpOrLoginActivity.this, SignUpActivity.class);
-				startActivity(intent);
-			}
-		});
-	}
+    }
 
 
 	@Override

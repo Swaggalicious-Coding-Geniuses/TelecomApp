@@ -98,6 +98,12 @@ public class SignUpActivity extends ActionBarActivity {
                             , Toast.LENGTH_LONG).show();
                     return;
                 }
+                //If username contains a white space then display error
+                if (username.getText().toString().contains(" ")){
+                    Toast.makeText(SignUpActivity.this, "No spaces allowed in username",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 //Set progress dialog
                 final ProgressDialog dialog = new ProgressDialog(SignUpActivity.this);
@@ -107,7 +113,7 @@ public class SignUpActivity extends ActionBarActivity {
 
                 //Set up new Parse user
                 ParseUser user = new ParseUser();
-                user.setUsername(username.getText().toString());
+                user.setUsername(username.getText().toString().toLowerCase());
                 user.setPassword(password.getText().toString());
                 user.put("firstName", firstName.getText().toString());
                 user.put("lastName", lastName.getText().toString());
