@@ -3,12 +3,17 @@ package com.swaglords.cse110app.Login;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -139,6 +144,22 @@ public class SignUpActivity extends ActionBarActivity {
                 });
             }
         });
+
+        password.setOnEditorActionListener(
+                new EditText.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        Log.d("" + actionId, "" + actionId);
+                        if (actionId == EditorInfo.IME_ACTION_DONE) {
+                            if (!event.isShiftPressed()) {
+                                ((EditText) findViewById(R.id.signUpPassword)).setError("Nope");
+
+                                return true; // consume.
+                            }
+                        }
+                        return false; // pass on to other listeners.
+                    }
+                });
     }
 
 

@@ -1,13 +1,47 @@
-[33mcommit 8f8491db582a9f1db5f2d8de18616287b3068518[m
+commit 0ac8a8bb5d559c89b27c93b13e8da66a05090dda
+Author: Michael LaPlante <mflaplan@ucsd.edu>
+Date:   Wed Jan 28 12:16:40 2015 -0800
+
+    Merging
+
+commit c62373420d0b3e289ed4c94e78aefc04c72a94ef
+Author: rrightmy <rrightmy@ucsd.edu>
+Date:   Sat Jan 24 15:08:23 2015 -0800
+
+    Added new main activity and minor changes
+    
+    Start up activity is now a page containing two buttons that link to
+    login and sign up respectively. Sign up now converts all usernames to
+    lowercase before sending them to the database. Also checks for spaces.
+    Login now converts all usernames to lowercase before checking with the
+    server. This should make it so that swagmaster and SwAgMaSTeR are the
+    same username.
+
+commit 1cd85fad7d0db698ed51b4c00994ce4c484e867e
+Author: Michael LaPlante <mflaplan@ucsd.edu>
+Date:   Fri Jan 23 16:20:14 2015 -0800
+
+    Minor fixes and UI changes
+
+commit e630a90637494a37fa491006fd4ece1982d79c7c
+Author: theloneplant <theloneplant@gmail.com>
+Date:   Fri Jan 23 01:08:26 2015 -0800
+
+    Polished login
+
+commit aedb37ecd523e6accda0c29b92405a057daa9073
+Author: theloneplant <theloneplant@gmail.com>
+Date:   Thu Jan 22 23:26:58 2015 -0800
+
+    Added git.log
+
+commit 8f8491db582a9f1db5f2d8de18616287b3068518
 Author: theloneplant <theloneplant@gmail.com>
 Date:   Thu Jan 22 23:06:21 2015 -0800
 
     App redirects to HomeActivity after successful login
 
- .../java/com/swaglords/cse110app/Login/SignUpOrLoginActivity.java  | 7 [32m+++++[m[31m--[m
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-[33mcommit 1f33c69c722412d6de824ff678166df475ca8140[m
+commit 1f33c69c722412d6de824ff678166df475ca8140
 Author: rrightmy <rrightmy@ucsd.edu>
 Date:   Thu Jan 22 23:00:05 2015 -0800
 
@@ -15,12 +49,7 @@ Date:   Thu Jan 22 23:00:05 2015 -0800
     
     LOGIN WORKS BOYSSSSS
 
- CSE110App/.idea/gradle.xml                                          | 2 [32m+[m[31m-[m
- CSE110App/app/app.iml                                               | 1 [32m+[m
- .../src/main/java/com/swaglords/cse110app/Login/SignUpActivity.java | 6 [32m+++[m[31m---[m
- 3 files changed, 5 insertions(+), 4 deletions(-)
-
-[33mcommit 4bd0ddde2964866b1bd16f52c9a8bcec6cea68b4[m
+commit 4bd0ddde2964866b1bd16f52c9a8bcec6cea68b4
 Author: theloneplant <theloneplant@gmail.com>
 Date:   Thu Jan 22 22:50:56 2015 -0800
 
@@ -28,14 +57,7 @@ Date:   Thu Jan 22 22:50:56 2015 -0800
     
     Not polished, but should work
 
- CSE110App/.idea/gradle.xml                         |   2 [32m+[m[31m-[m
- CSE110App/.idea/misc.xml                           |  18 [32m++[m[31m-[m
- CSE110App/app/app.iml                              |   5 [32m+[m[31m-[m
- .../cse110app/Login/SignUpOrLoginActivity.java     | 143 [32m+++++++++++++++[m[31m------[m
- CSE110App/app/src/main/res/values/strings.xml      |  12 [32m+[m[31m-[m
- 5 files changed, 134 insertions(+), 46 deletions(-)
-
-[33mcommit 0f1966df35302bb9c28af5f950daad86751d8934[m
+commit 0f1966df35302bb9c28af5f950daad86751d8934
 Author: rrightmy <rrightmy@ucsd.edu>
 Date:   Thu Jan 22 22:00:47 2015 -0800
 
@@ -43,16 +65,7 @@ Date:   Thu Jan 22 22:00:47 2015 -0800
     
     Sign up should be functional at this point
 
- CSE110App/app/src/main/AndroidManifest.xml         |   8 [32m+[m[31m-[m
- .../swaglords/cse110app/Login/HomeActivity.java    |  40 [32m++++++++[m
- .../swaglords/cse110app/Login/SignUpActivity.java  | 113 [32m++++++++++++++++++++[m[31m-[m
- .../app/src/main/res/layout/activity_home.xml      |  12 [32m+++[m
- .../app/src/main/res/layout/activity_sign_up.xml   |  11 [31m--[m
- CSE110App/app/src/main/res/menu/menu_home.xml      |   7 [32m++[m
- CSE110App/app/src/main/res/values/strings.xml      |   1 [32m+[m
- 7 files changed, 177 insertions(+), 15 deletions(-)
-
-[33mcommit f26efc02904d57deef1404bf9a821dabaf15751e[m
+commit f26efc02904d57deef1404bf9a821dabaf15751e
 Author: rrightmy <rrightmy@ucsd.edu>
 Date:   Thu Jan 22 20:22:14 2015 -0800
 
@@ -61,6 +74,16 @@ Date:   Thu Jan 22 20:22:14 2015 -0800
     Added more fields to activity_sign_up.xml and global variables relevant
     to those fields to SignUpActivity.java
 
- .../swaglords/cse110app/Login/SignUpActivity.java  | 21 [32m+++++++[m
- .../app/src/main/res/layout/activity_sign_up.xml   | 65 [32m+++++++++++++++++++[m[31m---[m
- 2 files changed, 77 insertions(+), 9 deletions(-)
+commit 7f25ab15fb3af14caa85cc465bd12397c64ce722
+Author: rrightmy <rrightmy@ucsd.edu>
+Date:   Thu Jan 22 19:27:36 2015 -0800
+
+    Project Add
+    
+    Project added to repository
+
+commit 00eb657f9a9b0e508e964ecd04a4c0166ebd3134
+Author: Michael LaPlante <theloneplant@gmail.com>
+Date:   Thu Jan 22 15:36:42 2015 -0800
+
+    Initial commit
